@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Discover Your Next Favorite Product!</title>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #2c3e50; /* Dark blue */
+}
+
+h1 {
+    color: #ecf0f1; /* Light gray */
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #ecf0f1; /* Light gray */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #3498db; /* Light blue on hover */
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #ecf0f1; /* Light gray */
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide nav initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #34495e; /* Slightly lighter dark blue */
+        width: 100%;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    }
+
+    nav.active {
+        display: flex; /* Show nav when active */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger button */
+    }
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 1rem;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: teal;
+}
+
+
+.product-card img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+</head>
+<body>
+
+
+    
+
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large"
+  onclick="w3_close()">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Home </a>
+  <a href="#" class="w3-bar-item w3-button">Products </a>
+  <a href="#" class="w3-bar-item w3-button">About </a>
+  <a href="#" class="w3-bar-item w3-button">Contact </a>
+</div>
+
+<div id="main">
+
+<div class="w3-teal">
+  <button id="openNav" class="w3-button w3-LimeGreen w3-xlarge" onclick="w3_open()">&#9776;</button>
+  <div class="w3-container">
+    <h1>Discover Your Next Favorite Product!</h1>
+    	<h2>Shop the Future Today!</h2>
+       <h2> Welcom To TrendHaven </h2>
+  </div>
+</div>
+
+<div class="w3-container">
+
+
+    <main>
+        <section class="product-grid">
+            <div class="product-card">
+                <img src="https://www.teez.in/cdn/shop/products/SPACEXCHESTLOGOTshirt_4_large.jpg?v=1645005717" alt="Product 1">
+                <h4>SpaceX Logo T-shirt Red Colour</h4>
+                <p>$19.99</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/B1VTtH-5WHS._CLa%7C2140%2C2000%7C61hSE-7wSmL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX569_.png" alt="Product 2">
+                <h4>Pop Pop Letter T-shirt</h4>
+                <p>$39.09</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+
+            <div class="product-card">
+                <img src="https://image.made-in-china.com/2f0j00MdeVRtCnEYpj/New-Design-Customize-Logo-Printing-Large-Plus-Size-Men-prime-S-T-Shirts-for-Men-100-Cotton-Oversize-T-Shirts-Men.webp" alt="Product 2">
+                <h4>Vogue Style T-shirt</h4>
+                <p>$19.61</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/B17H79+I8tS._CLa%7C2140%2C2000%7C615ZnBibv9L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png" alt="Product 2">
+                <h4>Crown T-shirt </h4>
+                <p>$32.01</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/A1rcXo55giL._CLa%7C2140%2C2000%7C81xWVJGpX8L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SL1500_.png" alt="Product 2">
+                <h4>Fashion Trends T-shirt</h4>
+                <p>$33.00</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.redwolf.in/image/cache/catalog/t-shirts/fullsleeves/marvel-the-avengers-initiative-full-sleeves-t-shirt-india-600x800.jpg" alt="Product 2">
+                <h4>Avengers Black & White</h4>
+                <p>$46.23</p>
+                <button>Add to Cart</button>
+            </div>            
+	<div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C81YEr%2B4upwL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SL1500_.png" alt="Product 2">
+                <h4> A Symbol from Avengers T-shirt</h4>
+                <p>$44.03</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://id-test-11.slatic.net/p/4bcc33ac383ac1d9a0b7b3545a1de727.jpg" alt="Product 2">
+                <h4>MARVEL T-shirt</h4>
+                <p>$37.11</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i5.walmartimages.com/asr/a2b2dd0c-3de4-4644-9699-f58a698a52de.a1fd56e36353a0f05500b2e6339c8b1d.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" alt="Product 2">
+                <h4>Red Avngers T-shirt</h4>
+                <p>$36.55</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://www.wyo.in/pub/media/mf_webp/jpg/media/catalog/product/cache/718154c3aff62b1ad64160986aa81112/f/o/four-avengers1.webp" alt="Product 2">
+                <h4> Black Avengers T-shirt</h4>
+                <p>$35.90</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://img.joomcdn.net/47a1f16c3eb5a443c1485ec8605e53d524263b0d_original.jpeg" alt="Product 2">
+                <h4>Avengers Endgame Iron-Man T-shirt</h4>
+                <p>$41.22</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://www.1920tee.com/cdn/shop/products/DynamicImageHandler_6c862635-fc61-4d84-b2d0-2ec914c6bfa5_grande.png?v=1571708976" alt="Product 2">
+                <h4>Captain America T-shirt</h4>
+                <p>$41.10</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/B11-CDvYaQS._CLa%7C2140%2C2000%7CB1u6Gfdqg-L.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SL1500_.png">
+                <h4>Avengers Infinity War T-shirt</h4>
+                <p>$40.03</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/t-shirt/8/q/d/xl-fm-m-cs03-p1-06-blu-fadmark-original-imagmdh2y7hmdup9.jpeg?q=90&crop=false" alt="Product 2">
+                <h4>Blue T-shirt A Symbol Avengers</h4>
+                <p>$37.32</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://i.ebayimg.com/images/g/fPMAAOSwP41dOHie/s-l1200.webp" alt="Product 2">
+                <h4>Black T-shirt Avengers Golden colour</h4>
+                <p>$29.75</p>
+                <button>Add to Cart</button>
+            </div>
+
+       <div class="product-card">
+                <img src="https://rukminim1.flixcart.com/image/850/1000/xif0q/shopsy-t-shirt/w/j/c/l-a-jolster-original-imagn4bhujzpvh5a.jpeg?q=20&crop=false" alt="Product 2">
+                <h4>Black T-shirt Avengers White Colour</h4>
+                <p>$29.65</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://storage.googleapis.com/swag-swami-media/2022/04/85775516-badminton-logo-men-t-shirt-black.jpg">
+                <h4>Black T-shirt</h4>
+                <p>$24.45</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+
+
+            <div class="product-card">
+                <img src="https://5.imimg.com/data5/ECOM/Default/2023/7/322616834/VM/FZ/FU/83482573/star-wars-t-shirt3-3eee3929-a5f0-4cc9-8355-7ea138625d92-500x500.jpg
+">
+                <h4>Star Wars Robot T-shirt</h4>
+                <p>$39.33</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C91pS0SZVoOL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UY1000_.png">
+                <h4>Star Wars LightSaber T-shirt</h4>
+                <p>$59.99</p>
+                <button>Add to Cart</button>
+            </div>
+  
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7CA1PZqLoC5lL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SL1500_.png">
+                <h4>Star Wars Anakin Skywalker T-shirt</h4>
+                <p>$46.35</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://images-cdn.ubuy.co.in/6685ec95701d8d05b25200d3-star-wars-i-am-your-father-t-shirt.jpg">
+                <h4>Star Wars T-shirt</h4>
+                <p>$40.21</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://c1-ebgames.eb-cdn.com.au/merchandising/images/packshots/a2470eaafbb642268de92d7079c4beec_Large.jpg">
+                <h4>Star Wars Darth Vader</h4>
+                <p>$36.89</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://ih1.redbubble.net/image.225815843.5760/ssrco,slim_fit_t_shirt,mens,575734:56d55c57b2,back,square_product,600x600.u5.jpg">
+                <h4>LightSaber T-shirt</h4>
+                <p>$41.23</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://di2ponv0v5otw.cloudfront.net/posts/2022/06/13/62a7c5bf7272af42b9f1161c/m_62a7c5cf9b5a4d96edf5356e.jpg">
+                <h4>3D Darth Vader T-shirt</h4>
+                <p>$59.83</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://target.scene7.com/is/image/Target/GUEST_3315d539-5e55-44fa-9c58-e57d603484ed?wid=488&hei=488&fmt=pjpeg">
+                <h4>Star Wars Black T-shirt</h4>
+                <p>$47.99</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://www.redwolf.in/image/cache/catalog/t-shirts/star-wars-the-mandalorian-where-i-go-t-shirt-600x800.jpg?m=1702629260">
+                <h4>White T-Shirt Mandalorain</h4>
+                <p>$56.48</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://images-cdn.ubuy.co.in/635ddb1188b6ae453404b343-unisex-jujutsu-kaisen-anime-gojo-satoru.jpg">
+                <h4>GoJo Sukuna Full Hands T-Shirt</h4>
+                <p>$78.81</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://assets.ajio.com/medias/sys_master/root/20240311/mUIH/65eef12005ac7d77bba82da7/-473Wx593H-467151413-black-MODEL.jpg">
+                <h4>Naruto  T-Shirt</h4>
+                <p>$70.39</p>
+                <button>Add to Cart</button>
+            </div>
+
+
+            <div class="product-card">
+                <img src="https://ae01.alicdn.com/kf/S49a28ac11e494e9bb78dabc517eeaec7X.jpg_640x640q90.jpg">
+                <h4>Naruto Real 3D  T-Shirt</h4>
+                <p>$79.89</p>
+                <button>Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://sharkshirts.in/wp-content/uploads/2021/12/Satoru-Gojo-Full-Sleeve-T-Shirt-920x925.jpg">
+                <h4>GoJo Jujutsu Kaisen  T-Shirt</h4>
+                <p>$76.68</p>
+                <button>Add to Cart</button>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 TrendHaven </p>
+         <p>Trems & Conditions</p>
+    </footer>
+</div>
+    <script>
+function w3_open() {
+  document.getElementById("main").style.marginLeft = "25%";
+  document.getElementById("mySidebar").style.width = "25%";
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("openNav").style.display = 'none';
+}
+function w3_close() {
+  document.getElementById("main").style.marginLeft = "0%";
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("openNav").style.display = "inline-block";
+}
+
+function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Page loaded. Ready for functionalities!");
+    // Add event listeners or AJAX calls here as needed
+});
+</script>
+</body>
+</html>
